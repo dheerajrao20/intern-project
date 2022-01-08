@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo">Logo</a>
+      <div id="toggle"></div>
+      <div id="navbar">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About us</a></li>
+          <li><a href="#contact">Conatct us</a></li>
+        </ul>
+      </div>
+    </header>
+    <section id="home">
+      <div class="left">
+        <div class="heading">
+          <h1>AI DOES'T HAVE TO BE EVIL TO DESTROY HUMAN</h1>
+        </div>
+        <div class="pic">
+          <img src="img/img01.png" alt="image" />
+        </div>
+      </div>
+      <div class="right">
+        <div class="heading-i">
+          <h1>TO PROCEED PLEASE CLICK ANY ONE BUTTON FROM BELOW</h1>
+        </div>
+        <div class="box">
+          <button onclick="demo()">Book a Demo</button>
+          <button onclick="call()">Call Us</button>
+          <button onclick="map()">Reach Us At</button>
+        </div>
+      </div>
+    </section>
+    <section id="pop">
+      <div class="close" id="close"></div>
+      <div class="down">
+        <h1>BOOK A DEMO</h1>
+        <input type="text" placeholder="Enter your name">
+        <input type="email" placeholder="youremail@example.com">
+        <input type="number" placeholder="Conatct number">
+        <button onclick="submit()">Submit</button>
+      </div>
+    </section>
+    <section id="call">
+      <div class="close" id="closecall"></div>
+      <div class="down" style="color: #fff; border: none;">
+        <h1>CALL US</h1>
+        <h2 style="font-size: 2em;">PHONE NUMBER</h2>
+        <h3 style="font-size: 1.8em;">1234567890</h3>
+        <h3 style="font-size: 1.8em;">1234567890</h3>
+      </div>
+    </section>
+    <section id="map">
+      <div class="close" id="closemap"></div>
+      <div class="down" style="color: #fff;">
+        <h1>ADDRESS</h1>
+        <h2 style="font-size: 2em;">XX, AREA, CITY</h2>
+        <h2 style="font-size: 1.8em;">STATE</h2>
+        <h2 style="font-size: 1.8em;">PINCODE</h2>
+      </div>
+    </section>
+    <!-- ======================== javascript ====================== -->
+    <script>
+      const header = document.getElementById("header");
+      const toggle = document.getElementById("toggle");
+      const navbar = document.getElementById("navbar");
+      document.onclick = function (e) {
+        if (
+          e.target.id !== "header" &&
+          e.target.id !== "toggle" &&
+          e.target.id !== "navbar"
+        ) {
+          toggle.classList.remove("active");
+          navbar.classList.remove("active");
+        }
+      };
+      toggle.onclick = function () {
+        toggle.classList.toggle("active");
+        navbar.classList.toggle("active");
+      };
+      function demo() {
+        var demo = document.getElementById("pop");
+        demo.style.display = "flex";
+      }
+      const close = document.getElementById("close");
+      close.onclick = function(){
+        var dem = document.getElementById("pop");
+        dem.style.display = "none";
+      }
+      function submit(){
+        var demo = document.getElementById("pop");
+        demo.style.display = "none";
+      }
+      function call(){
+        var call = document.getElementById("call");
+        call.style.display = "flex" ;
+      }
+      const closecall = document.getElementById("closecall");
+      closecall.onclick = function(){
+        var clcall = document.getElementById("call");
+        clcall.style.display = "none";
+      }
+      function map(){
+        var map = document.getElementById("map");
+        map.style.display = "flex" ;
+      }
+      const closemap = document.getElementById("closemap");
+      closemap.onclick = function(){
+        var clmap = document.getElementById("map");
+        clmap.style.display = "none";
+      }
+
+    </script>
+  </body>
+</html>

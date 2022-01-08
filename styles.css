@@ -1,0 +1,326 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+}
+header {
+  position: fixed;
+  display: flex;
+  top: 0;
+  right: 0;
+  justify-content: space-between;
+  width: 100%;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+.logo {
+  height: 60px;
+  line-height: 60px;
+  color: #d9e9f7;
+  font-size: 2em;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  padding-left: 20px;
+  text-decoration: none;
+}
+#toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: #9051ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+#toggle::before {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 2px;
+  background: #fff;
+  transform: translateY(-5px);
+  transition: 0.2s;
+}
+#toggle::after {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 2px;
+  background: #fff;
+  transform: translateY(5px);
+  transition: 0.2s;
+}
+#toggle.active::before {
+  transform: translateY(0) rotate(45deg);
+}
+#toggle.active::after {
+  transform: translateY(0) rotate(-45deg);
+}
+#toggle.active {
+  background: #f7226a;
+}
+#navbar {
+  position: relative;
+  height: 60px;
+  right: 60px;
+  transition: 0.5s;
+  overflow: hidden;
+}
+#navbar ul {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+#navbar ul li {
+  list-style: none;
+}
+#navbar ul li a {
+  color: #fff;
+  height: 60px;
+  line-height: 60px;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.4em;
+  padding: 0 15px;
+  letter-spacing: 2px;
+}
+#navbar ul li a:hover {
+  color: #d9e9f7;
+}
+#home {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  background-image: url(img/bg.jpg);
+}
+.left{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 10vh;
+  width: 40vw;
+}
+.left h1{
+  font-size: 3em;
+  text-align: center;
+  color: #d9e9f7;
+}
+.left img{
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  width: 90%;
+}
+.right{
+  border: 1px solid #d9e9f7;
+  margin-top: 10vh;
+  border-radius: 10px;
+  height: 60vh;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  backdrop-filter: blur(5px);
+}
+.right h1{
+  font-size: 1.5em;
+  text-align: center;
+  color: #fff;
+}
+.box{
+  display: flex;
+  flex-direction: column;
+  height: 40vh;
+  justify-content: space-around;
+}
+.box button{
+  font-size: 1.5em;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  width: 23vw;
+  height: 10vh;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #333;
+}
+.box button:hover{
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #fff;
+}
+.box button:active{
+  transform: translate(2px ,2px);
+}
+.box a{
+  text-decoration: none;
+}
+#pop, #call, #map{
+  background: url(https://cdn.pixabay.com/photo/2013/07/18/10/59/human-skeleton-163715_960_720.jpg);
+  background-size: cover;
+  position: fixed;
+  width: 80vw;
+  height: 80vh;
+  top: 10vh;
+  left: 10vw;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+#call{
+  background: url(img/p2.jpg);
+}
+#map{
+  background: url(https://cdn.pixabay.com/photo/2018/05/11/15/49/globalisation-3390877_960_720.jpg);
+  background-size: cover;
+}
+.close{
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.close::before, .close::after{
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  background-color: #fff;
+  transform: rotate(-45deg);
+}
+.close::after{
+  transform: rotate(45deg);
+}
+.down{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  width: 50vw;
+  height: 60vh;
+  padding: 0 80px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+.down h1, .call h1{
+  font-size: 3em;
+  color: #fff;
+}
+.down input{
+  height: 40px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2em;
+  text-align: center;
+  letter-spacing: 3px;
+}
+.down button{
+  align-self: center;
+  font-size: 1.2em;
+  padding: 10px 50px;
+  outline: none;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  color: #fff;
+  letter-spacing: 2px;
+  background: transparent;
+  cursor: pointer;
+}
+.down button:hover{
+  color: #333;
+  font-weight: 600;
+  background: #fff;
+}
+.down button:active{
+  transform: translate(2px, 2px);
+}
+
+
+@media (max-width: 1000px) {
+  #toggle{
+    display: flex;
+  }
+  #navbar {
+    position: fixed;
+    bottom: -100%;
+    right: 0;
+    width: 100%;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #navbar.active {
+    height: calc(100vh - 60px);
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    
+  }
+  #navbar ul {
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+  }
+  #navbar ul li a{
+    color: #000;
+  }
+  #home{
+    flex-direction: column;
+  }
+  .left{
+    margin-top: 125vh;
+    width: 100vw;
+    height: 100vh;
+  }
+  .left img{
+    width: 70%;
+  }
+  .left h1{
+    padding: 0 10vw;
+    margin-top: -20vh;
+  }
+  .right{
+    width: 80vw;
+    margin-top: 25vh;
+    background: linear-gradient(45deg, blue, rgb(110, 110, 245));
+  }
+  .box button{
+    width: 70vw;
+  }
+  .down{
+    width: 77vw;
+    padding: 0 10px;
+  }
+  .down h1{
+    font-size: 1.2em;
+  }
+  .down input{
+    font-size: 0.8em;
+  }
+}
+@media (max-width: 600px){
+  .left h1{
+    font-size: 2em;
+    padding: 0 10vw;
+    margin-top: -20vh;
+  }
+}
