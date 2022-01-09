@@ -297,7 +297,7 @@ header {
   font-size: 1.6em;
   margin: 16px 0;
 }
-
+/* ----------- media queries -------------  */
 @media (max-width: 1000px) {
   #toggle{
     display: flex;
