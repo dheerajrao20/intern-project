@@ -253,6 +253,50 @@ header {
   transform: translate(2px, 2px);
 }
 
+.cover {
+  height: 600px;
+  background-image: url(img/cover.png);
+  background-attachment: fixed;
+  background-size: cover;
+  /* position: relative; */
+}
+
+.footer{
+  display: flex;
+  height: 50vh;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+.f-1, .f-3{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.f-1 h1, .f-3 h1{
+  font-size: 2em;
+  text-align: center;
+
+}
+.social ion-icon {
+  color: rgb(50, 50, 252);
+  font-size: 3em;
+  margin: 22px;
+  cursor: pointer;
+}
+.social ion-icon:hover{
+  color: #9051ff;
+}
+.f-2 a{
+  font-size: 3em;
+  text-decoration: none;
+  color: #000;
+}
+.f-3 a{
+  text-decoration: none;
+  font-size: 1.6em;
+  margin: 16px 0;
+}
 
 @media (max-width: 1000px) {
   #toggle{
@@ -316,11 +360,21 @@ header {
   .down input{
     font-size: 0.8em;
   }
+  .footer{
+    flex-direction: column;
+    margin-top: 9vh;
+  }
+  .footer ion-icon{
+    font-size: 2em;
+  }
 }
 @media (max-width: 600px){
   .left h1{
     font-size: 2em;
     padding: 0 10vw;
     margin-top: -20vh;
+  }
+  .footer ion-icon{
+    margin: 10px;
   }
 }
